@@ -2,10 +2,10 @@
 // This variable added for high load panels which their response time is long and bot can't communicate with online panel!
 // null for default settings
 $request_exec_timeout = null;
-$dbhost = '{database_url}';
-$dbname = '{database_name}';
-$usernamedb = '{username_db}';
-$passworddb = '{password_db}';
+$dbhost = getenv('MYSQLHOST');
+$dbname = getenv('MYSQLDATABASE');
+$usernamedb = getenv('MYSQLUSER');
+$passworddb = getenv('MYSQLPASSWORD');
 $options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
