@@ -1,4 +1,5 @@
 <?php
+// TEST_RAILWAY_123
 require_once __DIR__ . '/../../config.php';
 function telegram($method, $datas = [], $token = null)
 {
