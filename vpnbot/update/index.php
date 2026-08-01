@@ -115,6 +115,7 @@ if ($user['bottype'] != $ApiToken) {
 if ($user['username'] != $username) {
     update("user", "username", $username, "id", $from_id);
 }
+file_put_contents("test.txt", $text);
 if ($text == "/start") {
     $textstart = "✋سلام $first_name عزیز به ربات ما خوش اومدی.
 
