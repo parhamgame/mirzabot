@@ -19,9 +19,8 @@ try {
     error_log("Database connection failed: " . $e->getMessage());
     die("error: database connection failed");
 }
-$APIKEY = '{API_KEY}';
-$adminnumber = '{admin_number}';
-$domainhosts = '{domain_name}';
-$usernamebot = '{username_bot}';
-
+$APIKEY = getenv('API_KEY');
+$adminnumber = getenv('admin_number');
+$domainhosts = getenv('domain_name');
+$usernamebot = getenv('username_bot');
 ?>
