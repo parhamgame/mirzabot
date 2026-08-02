@@ -1,4 +1,5 @@
 <?php
+file_put_contents('/tmp/start.log', date('Y-m-d H:i:s') . " index.php executed\n", FILE_APPEND);
 $version = file_get_contents('version');
 date_default_timezone_set('Asia/Tehran');
 ini_set('default_charset', 'UTF-8');
