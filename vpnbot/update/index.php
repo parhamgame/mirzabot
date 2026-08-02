@@ -26,6 +26,7 @@ $text_bot_var = json_decode(file_get_contents('text.json'), true);
 
 $textbotlang = languagechange();
 $dataBase = select("botsaz", "*", "bot_token", $ApiToken, "select");
+file_put_contents('/tmp/dbtest.log', print_r($dataBase, true), FILE_APPEND);
 $admin_ids = json_decode($dataBase['admin_ids']);
 $setting = json_decode($dataBase['setting'], true);
 if (!empty($setting['channel'])) {
@@ -117,6 +118,7 @@ if ($user['username'] != $username) {
     update("user", "username", $username, "id", $from_id);
 }
 file_put_contents("test.txt", $text);
+file_put_contents('/tmp/text.log', "TEXT=".$text."\n", FILE_APPEND);
 if ($text == "/start") {
     $textstart = "✋سلام $first_name عزیز به ربات ما خوش اومدی.
 
