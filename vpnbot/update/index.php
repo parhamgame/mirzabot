@@ -29,10 +29,7 @@ $textbotlang = languagechange();
 file_put_contents('/tmp/step.log',"before select\n",FILE_APPEND);
 
 // $dataBase = select("botsaz", "*", "bot_token", $ApiToken, "select");
-$dataBase = [
-    'admin_ids' => '[]',
-    'setting' => '{}'
-];
+$dataBase = select("botsaz", "*", "bot_token", $ApiToken, "select");
 file_put_contents('/tmp/pass.log',"passed database\n",FILE_APPEND);
 
 file_put_contents('/tmp/step.log',"after select\n".print_r($dataBase,true),FILE_APPEND);
