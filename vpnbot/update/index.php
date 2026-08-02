@@ -20,8 +20,8 @@ require_once $Pathfiles . 'vendor/autoload.php';
 $ManagePanel = new ManagePanel();
 
 $text_bot_var = json_decode(file_get_contents('text.json'), true);
-if (!checktelegramip())
-    die("Unauthorized access");
+// if (!checktelegramip())
+//     die("Unauthorized access");
 
 $textbotlang = languagechange();
 $dataBase = select("botsaz", "*", "bot_token", $ApiToken, "select");
