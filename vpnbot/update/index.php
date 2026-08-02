@@ -25,7 +25,11 @@ $text_bot_var = json_decode(file_get_contents('text.json'), true);
 //     die("Unauthorized access");
 
 $textbotlang = languagechange();
+file_put_contents('/tmp/step.log',"before select\n",FILE_APPEND);
+
 $dataBase = select("botsaz", "*", "bot_token", $ApiToken, "select");
+
+file_put_contents('/tmp/step.log',"after select\n".print_r($dataBase,true),FILE_APPEND);
 file_put_contents('/tmp/dbtest.log', print_r($dataBase, true), FILE_APPEND);
 $admin_ids = json_decode($dataBase['admin_ids']);
 $setting = json_decode($dataBase['setting'], true);
