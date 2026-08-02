@@ -20,6 +20,8 @@ try {
     die("error: database connection failed");
 }
 $APIKEY = getenv('API_KEY');
+$ApiToken = $APIKEY;
+
 $adminnumber = getenv('admin_number');
 $domainhosts = getenv('domain_name');
 $usernamebot = getenv('username_bot');
