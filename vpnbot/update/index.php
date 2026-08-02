@@ -1,4 +1,5 @@
 <?php
+file_put_contents('/tmp/update_raw.log', file_get_contents("php://input")."\n---\n", FILE_APPEND);
 file_put_contents('/tmp/start.log', date('Y-m-d H:i:s') . " index.php executed\n", FILE_APPEND);
 $version = file_get_contents('version');
 date_default_timezone_set('Asia/Tehran');
