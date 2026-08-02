@@ -27,7 +27,12 @@ $text_bot_var = json_decode(file_get_contents('text.json'), true);
 $textbotlang = languagechange();
 file_put_contents('/tmp/step.log',"before select\n",FILE_APPEND);
 
-$dataBase = select("botsaz", "*", "bot_token", $ApiToken, "select");
+// $dataBase = select("botsaz", "*", "bot_token", $ApiToken, "select");
+$dataBase = [
+    'admin_ids' => '[]',
+    'setting' => '{}'
+];
+file_put_contents('/tmp/pass.log',"passed database\n",FILE_APPEND);
 
 file_put_contents('/tmp/step.log',"after select\n".print_r($dataBase,true),FILE_APPEND);
 file_put_contents('/tmp/dbtest.log', print_r($dataBase, true), FILE_APPEND);
@@ -64,9 +69,14 @@ if (!isset($setting['active_step_note'])) {
     $setting['active_step_note'] = false;
     update("botsaz", "setting", json_encode($setting), "bot_token", $ApiToken);
 }
-$settingmain = select("setting", "*", null, null, "select");
+$settingmain = [
+    'statusnewuser' => 'off',
+    'limit_usertest_all' => 0
+];
+
 $showcard = 1;
-$users_ids = select("user", "*", "bottype", $ApiToken, "FETCH_COLUMN");
+
+$users_ids = [];
 if (!is_dir('data')) {
     mkdir('data');
 }
